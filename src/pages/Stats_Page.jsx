@@ -38,7 +38,7 @@ const Stats_Page = () => {
             temp[monthIndex-1] += month[i].amount;
         }
         setMonthArray(temp)
-        console.log("Data")
+        console.log("Data is ",temp)
     }
     const fetchLeaderboard = async () => {
         try {
