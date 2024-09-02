@@ -35,7 +35,7 @@ const Stats_Page = () => {
         for(let i=0;i<month.length;i++){
            
             const monthIndex = moment(month[i].monthName, 'MMMM').month() + 1
-            temp[monthIndex-1] += month[i].amount;
+            temp[monthIndex-1] += parseInt(month[i].amount);
         }
         setMonthArray(temp)
         console.log("Data is ",temp)
