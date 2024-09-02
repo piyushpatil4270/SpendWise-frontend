@@ -55,7 +55,7 @@ const Stats_Page = () => {
             const userToken = localStorage.getItem("token");
             const res = await axios.get("https://www.expensetracker2.kesug.com/expense/expenseStats", { headers: { "Authorization": userToken } });
             console.log("The data of stats is ", res.data);
-            
+            await groupInArray(res.data?.categoryStats);
             await groupInArray2(res.data?.monthlyData)
             console.log("grouped by category ", catArray);
         } catch (error) {
