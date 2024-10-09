@@ -11,7 +11,7 @@ const Yearly = () => {
     try {
       const userToken=localStorage.getItem("token")
       const res=await axios.post("https://spend-wise-backend-psi.vercel.app/expenses/getYearlyExpenses",{date:currYear},{headers:{"Authorization":userToken}})
-      setExpenses(res.data.expenses)
+      setExpenses(res.data)
     } catch (error) {
       console.log(error)
     }
