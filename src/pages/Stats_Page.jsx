@@ -11,35 +11,9 @@ const Stats_Page = () => {
     const [monthArray, setMonthArray] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
     const [loading,setLoading]=useState(false)
 
-    async function groupInArray(categoryStats) {
-        let tempCatArray = [0, 0, 0, 0];
-        for (let i = 0; i < categoryStats.length; i++) {
-            if (categoryStats[i].category === "utilities") {
-                tempCatArray[0] += parseInt(categoryStats[i].totalAmount);
-            } else if (categoryStats[i].category === "entertainment") {
-                tempCatArray[1] += parseInt(categoryStats[i].totalAmount);
-            } else if (categoryStats[i].category === "food") {
-                tempCatArray[2] += parseInt(categoryStats[i].totalAmount);
-            } else if (categoryStats[i].category === "transport") {
-                tempCatArray[3] += parseInt(categoryStats[i].totalAmount);
-            }
-            else if(categoryStats[i].category ===""){
-                tempCatArray[0]+=parseInt(categoryStats[i].totalAmount)
-            }
-        }
-        setCatArray(tempCatArray);
-    }
+    
 
-    async function groupInArray2(month){
-        let temp=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        for(let i=0;i<month.length;i++){
-           
-            const monthIndex = moment(month[i].monthName, 'MMMM').month() + 1
-            temp[monthIndex-1] += parseInt(month[i].amount);
-        }
-        setMonthArray(temp)
-        console.log("Data is ",temp)
-    }
+  
     const fetchLeaderboard = async () => {
         try {
             const userToken = localStorage.getItem("token");
@@ -55,12 +29,21 @@ const Stats_Page = () => {
             const userToken = localStorage.getItem("token");
             const res = await axios.get("https://spend-wise-backend-psi.vercel.app/expenses/expenseStats", { headers: { "Authorization": userToken } });
             console.log("The data of stats is ", res.data);
-            await groupInArray(res.data?.categoryStats);
-            await groupInArray2(res.data?.monthlyData)
+            
             console.log("grouped by category ", catArray);
         } catch (error) {
             console.log(error);
         }
+    }
+
+    const fetchYearlyStats=async()=>{
+    try {
+        const userToken = localStorage.getItem("token");
+        const res = await axios.get("https://spend-wise-backend-psi.vercel.app/expenses/getYearlyExpenses", { headers: { "Authorization": userToken } });
+        console.log("The data of stats is ", res.data);
+    } catch (error) {
+        console.log(error)
+    }
     }
 
     useEffect(() => {
