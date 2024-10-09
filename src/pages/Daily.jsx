@@ -79,7 +79,7 @@ const Income = () => {
     try {
       const userToken = localStorage.getItem("token");
       const res = await axios.post(
-        "https://spend-wise-backend-psi.vercel.app/expenses/getbyDay",
+        "https://spend-wise-backend-psi.vercel.app/expenses/getAllExpenses",
         {
           date: selectedDate,
           limit: itemsPerPage,
