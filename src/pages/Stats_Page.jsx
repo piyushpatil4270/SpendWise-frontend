@@ -43,7 +43,7 @@ const Stats_Page = () => {
     const fetchLeaderboard = async () => {
         try {
             const userToken = localStorage.getItem("token");
-            const res = await axios.get("https://www.expensetracker2.kesug.com/expense/leaderboard", { headers: { "Authorization": userToken } });
+            const res = await axios.get("https://spend-wise-backend-psi.vercel.app/expense/leaderboard", { headers: { "Authorization": userToken } });
             setdata(res.data);
         } catch (error) {
             console.log(error);
@@ -53,7 +53,7 @@ const Stats_Page = () => {
     const fetchStats = async () => {
         try {
             const userToken = localStorage.getItem("token");
-            const res = await axios.get("https://www.expensetracker2.kesug.com/expense/expenseStats", { headers: { "Authorization": userToken } });
+            const res = await axios.get("https://spend-wise-backend-psi.vercel.app/expense/expenseStats", { headers: { "Authorization": userToken } });
             console.log("The data of stats is ", res.data);
             await groupInArray(res.data?.categoryStats);
             await groupInArray2(res.data?.monthlyData)

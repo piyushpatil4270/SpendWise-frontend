@@ -6,7 +6,7 @@ const Signin = () => {
     const [username,setUsername]=useState("")
     const hadnleSignIn=async()=>{
         try {
-            const res=await axios.post("https://www.expensetracker2.kesug.com/auth/signup",{email:email,username:username,password:pass})
+            const res=await axios.post("https://spend-wise-backend-psi.vercel.app/auth/signup",{email:email,username:username,password:pass})
             alert(res.data)
         } catch (error) {
             console.log(error)

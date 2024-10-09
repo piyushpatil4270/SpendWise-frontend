@@ -9,7 +9,7 @@ const Navbar = ({isPremium,setPremium,setIsAuth}) => {
   const checkUser=async()=>{
     try {
       const userToken=localStorage.getItem("token")
-      const res=await axios.get("https://www.expensetracker2.kesug.com/premium/user",{headers:{"Authorization":userToken}})
+      const res=await axios.get("https://spend-wise-backend-psi.vercel.app/premium/user",{headers:{"Authorization":userToken}})
       setLoading(true)
       console.log(res.data)
       setLoading(false)

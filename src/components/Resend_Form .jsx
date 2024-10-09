@@ -6,7 +6,7 @@ const Resend_Form  = () => {
 
     const sendForm=async()=>{
         try {
-            const res=axios.post("https://www.expensetracker2.kesug.com/auth/forgot_password",{email:email})
+            const res=axios.post("https://spend-wise-backend-psi.vercel.app/auth/forgot_password",{email:email})
             
         } catch (error) {
             console.log(error)

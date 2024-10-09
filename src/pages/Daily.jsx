@@ -33,7 +33,7 @@ const Income = () => {
       setaddExp(false);
       const userToken = localStorage.getItem("token");
       const res = await axios.post(
-        "https://www.expensetracker2.kesug.com/expense/add",
+        "https://spend-wise-backend-psi.vercel.app/expense/add",
         {
           category: category,
           amount: amount,
@@ -53,7 +53,7 @@ const Income = () => {
     try {
       const userToken = localStorage.getItem("token");
       const res = await axios.post(
-        `https://www.expensetracker2.kesug.com/expense/delete/${id}`,
+        `https://spend-wise-backend-psi.vercel.app/expense/delete/${id}`,
         {},
         {
           headers: { Authorization: userToken },
@@ -79,7 +79,7 @@ const Income = () => {
     try {
       const userToken = localStorage.getItem("token");
       const res = await axios.post(
-        "https://www.expensetracker2.kesug.com/expense/getbyDay",
+        "https://spend-wise-backend-psi.vercel.app/expense/getbyDay",
         {
           date: selectedDate,
           limit: itemsPerPage,
