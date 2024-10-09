@@ -17,8 +17,8 @@ const SignUp = ({setIsAuth}) => {
           navigate("/")
         }
     } catch (error) {
-       if(error.response && (error.response.status === 401))alert("Incorrect Password")
-       else if(error.response && (error.response.status === 404))alert("User with email doesnt exist") 
+       if(error.response && (error.response.status === 401))alert("User with email doesnt exist")
+       else if(error.response && (error.response.status === 402))alert("Incorrect Password") 
 
     }
   }
