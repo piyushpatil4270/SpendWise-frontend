@@ -43,7 +43,7 @@ const Stats_Page = () => {
     const fetchLeaderboard = async () => {
         try {
             const userToken = localStorage.getItem("token");
-            const res = await axios.get("https://spend-wise-backend-psi.vercel.app/expenses/leaderboard", { headers: { "Authorization": userToken } });
+            const res = await axios.get("https://spend-wise-backend-psi.vercel.app/expenses/getLeaderboard", { headers: { "Authorization": userToken } });
             setdata(res.data);
         } catch (error) {
             console.log(error);
