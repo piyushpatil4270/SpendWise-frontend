@@ -13,7 +13,7 @@ const Monthly = () => {
   const getExpenses=async()=>{
     try {
       const userToken=localStorage.getItem("token")
-    const res=await axios.post("https://spend-wise-backend-psi.vercel.app/expense/getbyMonth",{month:currMonth,limit:itemsPerPage,page:currPage},{
+    const res=await axios.post("https://spend-wise-backend-psi.vercel.app/expenses/getbyMonth",{month:currMonth,limit:itemsPerPage,page:currPage},{
       headers:{'Authorization':userToken}
     })
     if(res.data.expenses)setExpenses(res.data.expenses)

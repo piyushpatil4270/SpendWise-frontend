@@ -42,7 +42,7 @@ const ExpenseTable = ({isPremium,setPremium}) => {
   const getStatsMonthly = async () => {
     try {
       const userToken = localStorage.getItem("token");
-      const res = await axios.post("https://spend-wise-backend-psi.vercel.app/expense/getbyMonthGrouped",{date:new Date()}, {
+      const res = await axios.post("https://spend-wise-backend-psi.vercel.app/expenses/getbyMonthGrouped",{date:new Date()}, {
         headers: { Authorization: userToken },
       });
       setMonthlyStats(res.data);
@@ -53,7 +53,7 @@ const ExpenseTable = ({isPremium,setPremium}) => {
   const getStatsYearly = async () => {
     try {
       const userToken = localStorage.getItem("token");
-      const res = await axios.post("https://spend-wise-backend-psi.vercel.app/expense/getbyYear",{date:new Date()}, {
+      const res = await axios.post("https://spend-wise-backend-psi.vercel.app/expenses/getbyYear",{date:new Date()}, {
         headers: { Authorization: userToken },
       });
       setYearlyStats(res.data.expenses);

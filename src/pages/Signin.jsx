@@ -10,6 +10,7 @@ const Signin = () => {
             alert(res.data)
         } catch (error) {
             console.log(error)
+            alert(error?.response?.message)
         }
        
     }
