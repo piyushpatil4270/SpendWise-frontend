@@ -12,10 +12,10 @@ const SignUp = ({setIsAuth}) => {
         console.log(res.data)
         alert(res.data.msg)
         localStorage.setItem('token',res.data.token)
-        if(res.status===200){
+     
           setIsAuth(true)
           navigate("/")
-        }
+      
     } catch (error) {
        if(error.response && (error.response.status === 401))alert("User with email doesnt exist")
        else if(error.response && (error.response.status === 402))alert("Incorrect Password") 
