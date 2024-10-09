@@ -159,7 +159,7 @@ const Income = () => {
                   <DeleteOutlineIcon
                     fontSize="5"
                     style={{ marginLeft: "8px", marginRight: "8px" }}
-                    onClick={() => handleDelete(expense.id)}
+                    onClick={() => handleDelete(expense._id)}
                   />
                 </div>
               </div>
