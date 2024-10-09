@@ -8,7 +8,7 @@ const ExpenseBar = ({monthdata}) => {
     datasets: [
       {
         label: 'Monthly Expenses',
-        data: monthdata,
+        data: monthdata.map((el)=>(el.expenses)),
         fill: false,
         borderColor: '#36A2EB',
         backgroundColor: '#36A2EB',

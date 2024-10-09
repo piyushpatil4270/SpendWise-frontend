@@ -30,7 +30,7 @@ const Payment_form = ({setPremium}) => {
             console.log("status",payUResponse.status)
             if(payUResponse.status===200){
               const userToken=localStorage.getItem("token")
-              const res=await axios.post("https://spend-wise-backend-psi.vercel.app/premium/add",{},{headers:{"Authorization":userToken}})
+              const res=await axios.post("https://spend-wise-backend-psi.vercel.app/premium/addUser",{},{headers:{"Authorization":userToken}})
               if(res.status===202){
                 alert("You are a premium user now")
                 setPremium(true)

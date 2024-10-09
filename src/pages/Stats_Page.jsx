@@ -27,8 +27,9 @@ const Stats_Page = () => {
     const fetchStats = async () => {
         try {
             const userToken = localStorage.getItem("token");
-            const res = await axios.get("https://spend-wise-backend-psi.vercel.app/expenses/expenseStats", { headers: { "Authorization": userToken } });
+            const res = await axios.post("https://spend-wise-backend-psi.vercel.app/expenses/getExpensesByCategory",{}, { headers: { "Authorization": userToken } });
             console.log("The data of stats is ", res.data);
+            setCatArray(res.data)
             
             console.log("grouped by category ", catArray);
         } catch (error) {
@@ -39,8 +40,9 @@ const Stats_Page = () => {
     const fetchYearlyStats=async()=>{
     try {
         const userToken = localStorage.getItem("token");
-        const res = await axios.get("https://spend-wise-backend-psi.vercel.app/expenses/getYearlyExpenses", { headers: { "Authorization": userToken } });
+        const res = await axios.post("https://spend-wise-backend-psi.vercel.app/expenses/getYearlyExpenses",{}, { headers: { "Authorization": userToken } });
         console.log("The data of stats is ", res.data);
+        setMonthArray(res.data)
     } catch (error) {
         console.log(error)
     }
@@ -50,6 +52,7 @@ const Stats_Page = () => {
         setLoading(true)
         fetchLeaderboard();
         fetchStats();
+        fetchYearlyStats()
         setLoading(false)
     }, []);
      {loading && <span>Loading...</span>}

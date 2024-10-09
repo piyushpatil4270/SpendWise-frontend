@@ -30,8 +30,8 @@ const Yearly = () => {
           
         </div>
         {expenses.map((expense)=>{
-         const formattedDate=moment.utc(expense.month,"YYYY-MM").format("MMMM YYYY")
-          return <Yearly_Card month={formattedDate} amount={expense.totalAmount}  />
+         const formattedDate=moment().month(expense.month - 1).format('MMMM')
+          return <Yearly_Card month={formattedDate} amount={expense.expenses}  />
         })}
         </div>
   )

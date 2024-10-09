@@ -92,8 +92,8 @@ const Income = () => {
       if (res.data?.expenses) {
         setData(res.data.expenses);
       }
-      setTotalpages(Math.ceil(res.data.total / itemsPerPage));
-      if(res?.data?.totalAmount)setTotalAmt(res.data.totalAmount)
+      setTotalpages(Math.ceil(res.data.totalEx / itemsPerPage));
+      if(res?.data?.total)setTotalAmt(res.data.total)
       else setTotalAmt(0)
     } catch (error) {
       console.log(error);

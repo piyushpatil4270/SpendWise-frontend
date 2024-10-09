@@ -5,10 +5,10 @@ import 'chart.js/auto';
 const ExpensePie = ({expenseData}) => {
   console.log("expense data is ",expenseData)
   const data = {
-    labels: ['Utilities', 'Entertainment', 'Food', 'Transport', 'Education'],
+    labels: expenseData.map((el)=>(el._id.category)),
     datasets: [
       {
-        data:expenseData,
+        data:expenseData.map((el)=>(el.totalAmount)),
         backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF9F40', '#4BC0C0'],
         hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF9F40', '#4BC0C0']
       }
