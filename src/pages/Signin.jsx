@@ -17,7 +17,7 @@ const Signin = () => {
     <div className='w-full h-dvh bg-cyan-300 flex flex-col justify-center items-center'>
     <div className='xs:w-[60%]  sm:w-[40%] bg-white flex flex-col  '>
         <div className='xs:p-1 xs:m-1  sm:p-2 sm:m-2'>
-            <span className='border-0 border-b-2 xs:text-[14px] sm:text-[16px] border-cyan-300 p-2'>SignIn</span>
+            <span className='border-0 border-b-2 xs:text-[14px] sm:text-[16px] border-cyan-300 p-2'>SignUp</span>
         </div>
         <div className='w-auto xs:p-1 xs:m-1  sm:p-2 sm:m-2 flex items-center justify-start p-2'>
             <span className='flex-1  xs:text-[12px] sm:text-[15px]'>Username</span>
@@ -33,7 +33,7 @@ const Signin = () => {
         </div>
         <div className='w-auto xs:p-1 xs:m-1  sm:p-2 sm:m-2 gap-8 flex items-center justify-center  '>
             <button className='text-[14px] bg-cyan-300 p-[4px] rounded-sm text-white' onClick={hadnleSignIn}>Sign-In</button>
-            <a href='/' className='border-0 border-b-[1px] text-[14px] p-1 border-blue-700'>Log-In</a>
+            <a href='/' className='border-0 border-b-[1px] text-[14px] p-1 border-blue-700'>Sign-Up</a>
         </div>
    
     </div>
