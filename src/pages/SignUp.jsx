@@ -38,8 +38,8 @@ const SignUp = ({setIsAuth}) => {
             <input className='w-[70%] border-0 border-cyan-400 border-b-[1px] outline-none' onChange={(e)=>setPass(e.target.value)} />
         </div>
         <div className='w-auto xs:p-1 xs:m-1  sm:p-1 sm:m-1 xs:gap-2 sm:gap-5  flex items-center justify-center'>
-            <button className='text-[14px] bg-cyan-300 p-[4px] rounded-sm text-white' onClick={handleLogin}>Sign-Up</button>
-            <a href='/signin' className='border-0 border-b-[1px] text-[14px] p-1 border-blue-700'>Sign-In</a>
+            <button className='text-[14px] bg-cyan-300 p-[4px] rounded-sm text-white' onClick={handleLogin}>Sign-In</button>
+            <a href='/signin' className='border-0 border-b-[1px] text-[14px] p-1 border-blue-700'>Sign-Up</a>
            
         </div>
         <div className='w-auto p-1 m-1 gap-2 flex items-center justify-center'>
